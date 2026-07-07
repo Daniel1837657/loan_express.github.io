@@ -1,200 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <link rel="icon" type="image/png" href="../next-app/public/logo.PNG">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Loan Express | Creditos personales y libre inversion</title>
-    <meta name="description" content="Loan Express ofrece credito personal y libre inversion con solicitud digital, carga de documentos y seguimiento en linea." />
-    <link rel="canonical" href="https://loanexpress.com/" />
-    <meta property="og:title" content="Loan Express" />
-    <meta property="og:description" content="Solicita, adjunta documentos y consulta el estado de tu credito en linea." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231E3A8A'/%3E%3Ctext x='32' y='39' font-family='Arial' font-size='24' text-anchor='middle' fill='white' font-weight='700'%3ELE%3C/text%3E%3C/svg%3E" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Express - Crédito Digital</title>
     <link rel="stylesheet" href="styles.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FinancialService",
-        "name": "Loan Express",
-        "url": "https://loanexpress.com/",
-        "areaServed": "US",
-        "description": "Servicios de credito personal y libre inversion con solicitud digital.",
-        "sameAs": []
-      }
-    </script>
-  </head>
-  <body>
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
     <header class="site-header">
-      <a class="brand" href="#inicio" data-route="public">
-        <img src="../next-app/public/logo.PNG" alt="Loan Express" class="brand-logo" width="84" height="64" />
-      </a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu">☰</button>
-      <nav class="nav" id="mainNav" aria-label="Principal">
-        <a href="#nosotros" data-i18n="nav_about">Nosotros</a>
-        <a href="#servicios" data-i18n="nav_services">Servicios</a>
-        <a href="#requisitos" data-i18n="nav_requirements">Requisitos</a>
-        <a href="#faq" data-i18n="nav_faq">FAQ</a>
-        <a href="#contacto" data-i18n="nav_contact">Contacto</a>
-        <button class="ghost-button" id="langToggle" type="button">EN</button>
-        <button class="secondary-button" data-view="login" type="button" data-i18n="nav_login">Ingresar</button>
-        <button class="primary-button" data-view="register" type="button" data-i18n="nav_apply">Solicitar credito</button>
-      </nav>
+        <a href="#" class="brand">
+            <span class="brand-mark">LE</span>
+            Loan Express
+        </a>
+        <nav class="nav" id="mainNav">
+            <a href="#servicios">Productos</a>
+            <a href="#requisitos">Requisitos</a>
+            <a href="#testimonios">Testimonios</a>
+            <a href="#faq">FAQ</a>
+            <a href="/prototype/login.html" class="secondary-button">Iniciar sesión</a>
+            <a href="/prototype/register.html" class="primary-button">Registrarse</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
     </header>
 
     <main>
-      <section class="hero" id="inicio">
-        <div class="hero-content">
-          <p class="eyebrow" data-i18n="hero_eyebrow">Credito digital serio y transparente</p>
-          <h1 data-i18n="hero_title">Loan Express</h1>
-          <p data-i18n="hero_copy">Solicita credito personal o de libre inversion, adjunta tus documentos y consulta el estado desde un solo lugar.</p>
-          <div class="hero-actions">
-            <button class="primary-button large" data-view="register" type="button" data-i18n="start_request">Iniciar solicitud</button>
-            <a class="text-link" href="#requisitos" data-i18n="see_requirements">Ver requisitos</a>
-          </div>
-        </div>
-        <div class="hero-panel" aria-label="Resumen Loan Express">
-          <div>
-            <span class="metric">$3k - $200k</span>
-            <span data-i18n="amount_range">Rango de montos</span>
-          </div>
-          <div>
-            <span class="metric">1.3%</span>
-            <span data-i18n="fixed_rate">Tasa fija</span>
-          </div>
-          <div>
-            <span class="metric">12 - 60</span>
-            <span data-i18n="terms_months">Meses de plazo</span>
-          </div>
-        </div>
-      </section>
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="hero">
+            <div>
+                <p class="eyebrow">Crédito digital serio y transparente</p>
+                <h1>Loan Express</h1>
+                <p>
+                    Solicita crédito personal o de libre inversión, adjunta documentos y consulta el estado desde un solo lugar.
+                </p>
+                <div class="hero-actions">
+                    <a href="/prototype/nueva-solicitud.html" class="primary-button large">Solicitar crédito</a>
+                    <a href="#requisitos" class="text-link">Ver requisitos</a>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div>
+                    <span>Rango de montos</span>
+                    <span class="metric">$3k - $200k</span>
+                </div>
+                <div>
+                    <span>Tasa fija</span>
+                    <span class="metric">1.3%</span>
+                </div>
+                <div>
+                    <span>Meses de plazo</span>
+                    <span class="metric">12 - 60</span>
+                </div>
+            </div>
+        </section>
 
-      <section class="section" id="servicios">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="services_eyebrow">Productos financieros</p>
-          <h2 data-i18n="services_title">Dos opciones claras para tu necesidad</h2>
-        </div>
-        <div class="product-grid" id="productGrid"></div>
-      </section>
+        <!-- ===== PRODUCTOS ===== -->
+        <section class="section" id="servicios">
+            <div class="section-heading">
+                <p class="eyebrow">Productos financieros</p>
+                <h2>Dos opciones claras para tu necesidad</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Crédito Personal</h3>
+                    <p>Para necesidades personales con plazo fijo y proceso digital.</p>
+                    <ul>
+                        <li><strong>Montos:</strong> $3,000 - $50,000</li>
+                        <li><strong>Plazos:</strong> 12, 24, 36, 48, 60 meses</li>
+                    </ul>
+                    <a href="/prototype/nueva-solicitud.html" class="secondary-button">Solicitar</a>
+                </div>
+                <div class="product-card">
+                    <h3>Libre Inversión</h3>
+                    <p>Para proyectos, consolidación o inversión con plazos flexibles.</p>
+                    <ul>
+                        <li><strong>Montos:</strong> $60,000 - $200,000</li>
+                        <li><strong>Plazos:</strong> 12, 24, 36, 48, 60 meses</li>
+                    </ul>
+                    <a href="/prototype/nueva-solicitud.html" class="secondary-button">Solicitar</a>
+                </div>
+            </div>
+        </section>
 
-      <section class="section split" id="nosotros">
-        <div>
-          <p class="eyebrow" data-i18n="about_eyebrow">Institucional</p>
-          <h2 data-i18n="about_title">Profesionalismo para decisiones financieras importantes</h2>
-          <p data-i18n="about_intro">Loan Express acompana a personas que necesitan credito en linea con un proceso claro, documentado y orientado a la confianza.</p>
-        </div>
-        <div class="stack">
-          <article class="info-block">
-            <h3 data-i18n="history_title">Historia</h3>
-            <p data-i18n="history_copy">Loan Express nace para facilitar el acceso a soluciones de credito a clientes que necesitan una evaluacion seria, especialmente migrantes, colombianos en el exterior y personas que requieren una alternativa financiera formal.</p>
-          </article>
-          <article class="info-block">
-            <h3 data-i18n="mission_title">Mision</h3>
-            <p data-i18n="mission_copy">Facilitar acceso a credito mediante procesos digitales, claros y responsables.</p>
-          </article>
-          <article class="info-block">
-            <h3 data-i18n="vision_title">Vision</h3>
-            <p data-i18n="vision_copy">Ser una entidad reconocida por confianza, rapidez y acompanamiento serio a sus clientes.</p>
-          </article>
-          <article class="info-block">
-            <h3 data-i18n="values_title">Valores</h3>
-            <p data-i18n="values_copy">Transparencia, seguridad, cumplimiento y respeto por la informacion del cliente.</p>
-          </article>
-          <article class="info-block">
-            <h3 data-i18n="commitment_title">Compromiso</h3>
-            <p data-i18n="commitment_copy">Cada solicitud se revisa con criterios definidos, proteccion de datos y comunicacion por correo durante el proceso.</p>
-          </article>
-        </div>
-      </section>
+        <!-- ===== REQUISITOS ===== -->
+        <section class="section muted" id="requisitos">
+            <div class="section-heading">
+                <p class="eyebrow">Antes de solicitar</p>
+                <h2>Requisitos para solicitar</h2>
+            </div>
+            <div class="requirements-grid">
+                <div class="requirement">
+                    <strong>📄 Documentos aceptados</strong>
+                    <p>Identidad, pasaporte, permiso de trabajo, matrícula consular u otros habilitados.</p>
+                </div>
+                <div class="requirement">
+                    <strong>📎 Archivos</strong>
+                    <p>PDF o imagen, máximo 10 MB por archivo.</p>
+                </div>
+                <div class="requirement">
+                    <strong>✅ Condiciones</strong>
+                    <p>Monto y plazo válidos según producto, con al menos un documento de identidad.</p>
+                </div>
+            </div>
+        </section>
 
-      <section class="section muted" id="requisitos">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="requirements_eyebrow">Antes de solicitar</p>
-          <h2 data-i18n="requirements_title">Requisitos para solicitar</h2>
-        </div>
-        <div class="requirements-grid">
-          <div class="requirement">
-            <strong data-i18n="req_docs">Documentos aceptados</strong>
-            <p data-i18n="req_docs_copy">Identidad, pasaporte, permiso de trabajo, matricula consular, Social Security u otros habilitados.</p>
-          </div>
-          <div class="requirement">
-            <strong data-i18n="req_files">Archivos</strong>
-            <p data-i18n="req_files_copy">PDF o imagen, maximo 10 MB por archivo.</p>
-          </div>
-          <div class="requirement">
-            <strong data-i18n="req_terms">Condiciones</strong>
-            <p data-i18n="req_terms_copy">Monto dentro del producto elegido, plazo de 12, 24, 36, 48 o 60 meses y al menos un documento de identidad.</p>
-          </div>
-        </div>
-      </section>
+        <!-- ===== TESTIMONIOS ===== -->
+        <section class="section" id="testimonios">
+            <div class="section-heading">
+                <p class="eyebrow">Lo que dicen nuestros clientes</p>
+                <h2>Testimonios reales</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <p style="font-style:italic; color:#334155;">"El proceso fue increíblemente rápido. En 24 horas ya tenía el dinero en mi cuenta. ¡Totalmente recomendado!"</p>
+                    <div>
+                        <strong>María Rodríguez</strong>
+                        <p class="small-note">Cliente desde 2024</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <p style="font-style:italic; color:#334155;">"La transparencia en las tasas y plazos me dio mucha confianza. Sin sorpresas, todo claro desde el principio."</p>
+                    <div>
+                        <strong>Carlos Pérez</strong>
+                        <p class="small-note">Cliente desde 2023</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <p style="font-style:italic; color:#334155;">"Pude consolidar mis deudas con una sola solicitud. El equipo de soporte siempre estuvo disponible para ayudarme."</p>
+                    <div>
+                        <strong>Ana Gómez</strong>
+                        <p class="small-note">Cliente desde 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <section class="section" id="faq">
-        <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
-          <h2 data-i18n="faq_title">Preguntas frecuentes</h2>
-        </div>
-        <div class="accordion" id="faqList"></div>
-      </section>
-
-      <section class="section split" id="contacto">
-        <div>
-          <p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
-          <h2 data-i18n="contact_title">Habla con Loan Express</h2>
-          <p data-i18n="contact_copy">Envianos tus datos y un asesor revisara tu mensaje.</p>
-          <ul class="contact-list">
-            <li>contacto@loanexpress.com</li>
-            <li>+1 (555) 010-2026</li>
-            <li>Lunes a viernes, 8:00 a.m. - 6:00 p.m.</li>
-          </ul>
-        </div>
-        <form class="panel-form" id="contactForm">
-          <label><span data-i18n="name">Nombre</span><input required name="name" /></label>
-          <label><span data-i18n="email">Correo</span><input required type="email" name="email" /></label>
-          <label><span data-i18n="message">Mensaje</span><textarea required name="message"></textarea></label>
-          <button class="primary-button" type="submit" data-i18n="send">Enviar</button>
-        </form>
-      </section>
-
-      <section class="auth-screen hidden" id="authView" aria-live="polite"></section>
-
-      <section class="app-shell hidden" id="clientApp">
-        <aside class="sidebar">
-          <strong>Cliente</strong>
-          <button data-client-tab="requests" type="button">Mis solicitudes</button>
-          <button data-client-tab="new" type="button">Nueva solicitud</button>
-          <button data-client-tab="profile" type="button">Mi perfil</button>
-          <button data-action="logout" type="button">Cerrar sesion</button>
-        </aside>
-        <div class="workspace" id="clientWorkspace"></div>
-      </section>
-
-      <section class="app-shell hidden" id="adminApp">
-        <aside class="sidebar admin-sidebar">
-          <strong>Admin</strong>
-          <button data-admin-tab="requests" type="button">Solicitudes</button>
-          <button data-admin-tab="clients" type="button">Clientes</button>
-          <button data-action="logout" type="button">Cerrar sesion</button>
-        </aside>
-        <div class="workspace" id="adminWorkspace"></div>
-      </section>
-
-      <section class="legal section" id="legal">
-        <h2>Politica de privacidad y terminos</h2>
-        <p>Loan Express protege la informacion personal y documental del cliente. Los datos se utilizan para crear la cuenta, completar el perfil, evaluar solicitudes de credito, gestionar documentos, comunicar cambios de estado y cumplir obligaciones legales aplicables.</p>
-        <p>El envio de una solicitud no implica aprobacion automatica. La aprobacion, rechazo o solicitud de documentacion adicional depende de la revision administrativa y de la informacion presentada por el cliente.</p>
-      </section>
+        <!-- ===== FAQ ===== -->
+        <section class="section muted" id="faq">
+            <div class="section-heading">
+                <p class="eyebrow">FAQ</p>
+                <h2>Preguntas frecuentes</h2>
+            </div>
+            <div class="accordion">
+                <details>
+                    <summary>¿Debo verificar mi correo?</summary>
+                    <p>No. El registro se puede completar sin verificación obligatoria.</p>
+                </details>
+                <details>
+                    <summary>¿Cuántos documentos necesito?</summary>
+                    <p>Al menos un documento de identidad. Se pueden pedir más en revisión.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo recibo notificaciones?</summary>
+                    <p>Por correo cuando el estado de la solicitud cambia.</p>
+                </details>
+            </div>
+        </section>
     </main>
 
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-      <span>Loan Express</span>
-      <a href="#legal">Privacidad</a>
-      <a href="#legal">Terminos</a>
-      <span>Credito digital con proceso claro y seguimiento en linea</span>
+        <span>&copy; 2026 Loan Express. Todos los derechos reservados.</span>
+        <nav>
+            <a href="#">Privacidad</a>
+            <a href="#">Términos</a>
+            <a href="#">Contacto</a>
+        </nav>
     </footer>
 
     <script src="app.js"></script>
-  </body>
+    <script>
+        // Menú hamburguesa
+        const toggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('mainNav');
+        if (toggle && nav) {
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('open');
+            });
+        }
+    </script>
+</body>
 </html>
