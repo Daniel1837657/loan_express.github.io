@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum EstadoSolicitud {
+  borrador
+  enviada
+  documentacion_pendiente
+  en_revision
+  aprobada
+  rechazada
+  cancelada
+}
+
+model Usuario {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String?
+  supabaseId String?
+  role      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  cliente   Cliente?
+}
+
+model Cliente {
+  id            String      @id @default(cuid())
+  userId        String      @unique
+  user          Usuario     @relation(fields: [userId], references: [id])
+  firstName     String
+  lastName      String
+  phone         String
+  docType       String
+  docNumber     String
+  birthDate     DateTime
+  originCountry String
+  address       String
+  occupation    String
+  company       String
+  monthlyIncome Int
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  solicitudes   Solicitud[]
+}
+
+model Solicitud {
+  id           String          @id @default(cuid())
+  number       String          @unique
+  clienteId    String
+  cliente      Cliente         @relation(fields: [clienteId], references: [id])
+  productId    String
+  amount       Int
+  term         Int
+  rate         Float
+  status       EstadoSolicitud @default(enviada)
+  clientNotes  String?
+  adminNotes   String?
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  documents    Documento[]
+  history      Historial[]
+}
+
+model Documento {
+  id          String   @id @default(cuid())
+  solicitudId String
+  solicitud   Solicitud @relation(fields: [solicitudId], references: [id])
+  type        String
+  name        String
+  size        Int
+  mime        String
+  url         String
+  uploadedAt  DateTime @default(now())
+}
+
+model Historial {
+  id          String   @id @default(cuid())
+  solicitudId String
+  solicitud   Solicitud @relation(fields: [solicitudId], references: [id])
+  from        EstadoSolicitud
+  to          EstadoSolicitud
+  by          String
+  comment     String
+  date        DateTime @default(now())
+}
