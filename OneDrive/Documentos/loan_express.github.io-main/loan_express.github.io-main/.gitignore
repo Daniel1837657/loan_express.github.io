@@ -6,3 +6,5 @@ package-lock.json
 
 .vercel
 .env*
+
+# que ignora git
