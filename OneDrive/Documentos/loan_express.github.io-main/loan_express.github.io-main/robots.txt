@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://loaneforxpress.com/sitemap.xml
