@@ -182,7 +182,7 @@ export default function HomePage() {
                 ? "Send us an email for any inquiry."
                 : "Envíanos un correo electrónico para cualquier consulta."}
             </p>
-            <a href="mailto:contacto@loanexpress.com" className="secondary-button">
+            <a href="mailto:contact@loaneforxpress.com" className="secondary-button">
               {lang === "en" ? "Write email" : "Escribir correo"}
             </a>
           </article>
@@ -196,7 +196,7 @@ export default function HomePage() {
                 ? "Call us Monday to Friday, 8:00 a.m. - 6:00 p.m."
                 : "Llámanos de lunes a viernes, 8:00 a.m. - 6:00 p.m."}
             </p>
-            <a href="tel:+15550102026" className="secondary-button">
+            <a href="tel:+5550102026" className="secondary-button">
               {lang === "en" ? "Call" : "Llamar"}
             </a>
           </article>

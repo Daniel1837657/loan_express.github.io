@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Loan Express",
   description: "Credito personal y libre inversion con solicitud digital y seguimiento en linea.",
-  metadataBase: new URL("https://loanexpress.com"),
+  metadataBase: new URL("https://loaneforxpress.com"),
   openGraph: {
     title: "Loan Express",
     description: "Credito personal y libre inversion con solicitud digital y seguimiento en linea.",
