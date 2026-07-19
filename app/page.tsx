@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Testimonials from "@/components/home/testimonials";
+import ContactForm from "@/components/home/contact-form";
 
 const products = [
   {
@@ -25,7 +26,7 @@ export const metadata = {
   authors: [{ name: "Loan Express" }],
   creator: "Loan Express",
   publisher: "Loan Express",
-  metadataBase: new URL("https://loaneforxpress.com/"),
+  metadataBase: new URL("https://loaneforxpress.com"),
   openGraph: {
     title: "Loan Express | Crédito Digital Rápido y Transparente",
     description: "Solicita crédito personal o de libre inversión con proceso digital, tasas fijas y aprobación rápida.",
@@ -61,7 +62,7 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "FinancialService",
             "name": "Loan Express",
-            "url": "https://loaneforxpress.com/",
+            "url": "https://loaneforxpress.com",
             "areaServed": "US",
             "description": "Servicios de credito personal y libre inversion con solicitud digital.",
             "sameAs": []
@@ -69,24 +70,6 @@ export default function HomePage() {
         }}
       />
       
-      <header className="site-header">
-        <Link href="/" className="brand">
-          <img src="/logo.png" alt="Loan Express" className="brand-logo" width="84" height="64" fetchPriority="high" />
-        </Link>
-        <nav className="nav" id="mainNav">
-          <Link href="#nosotros">Nosotros</Link>
-          <Link href="#servicios">Servicios</Link>
-          <Link href="#requisitos">Requisitos</Link>
-          <Link href="#testimonios">Testimonios</Link>
-          <Link href="#faq">FAQ</Link>
-          <Link href="#contacto">Contacto</Link>
-          <button className="ghost-button" type="button">EN</button>
-          <Link href="/login" className="secondary-button">Ingresar</Link>
-          <Link href="/registro" className="primary-button">Registrarse</Link>
-        </nav>
-        <button className="menu-toggle" type="button" aria-label="Menú">☰</button>
-      </header>
-
       <main>
         <section 
           className="hero" 
@@ -195,41 +178,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="section" id="testimonios">
-          <div className="section-heading">
-            <p className="eyebrow">Lo que dicen nuestros clientes</p>
-            <h2>Experiencias de nuestros clientes</h2>
-          </div>
-          <div className="product-grid">
-            <div className="product-card">
-              <p style={{ fontStyle: 'italic', color: '#334155', lineHeight: 1.6 }}>
-                "El proceso fue increíblemente rápido. En 24 horas ya tenía el dinero en mi cuenta. ¡Totalmente recomendado!"
-              </p>
-              <div style={{ marginTop: '12px' }}>
-                <strong style={{ color: '#1e3a8a' }}>María Rodríguez</strong>
-                <p className="small-note" style={{ margin: 0 }}>Cliente desde 2024</p>
-              </div>
-            </div>
-            <div className="product-card">
-              <p style={{ fontStyle: 'italic', color: '#334155', lineHeight: 1.6 }}>
-                "La transparencia en las tasas y plazos me dio mucha confianza. Sin sorpresas, todo claro desde el principio."
-              </p>
-              <div style={{ marginTop: '12px' }}>
-                <strong style={{ color: '#1e3a8a' }}>Carlos Pérez</strong>
-                <p className="small-note" style={{ margin: 0 }}>Cliente desde 2023</p>
-              </div>
-            </div>
-            <div className="product-card">
-              <p style={{ fontStyle: 'italic', color: '#334155', lineHeight: 1.6 }}>
-                "Pude consolidar mis deudas con una sola solicitud. El equipo de soporte siempre estuvo disponible para ayudarme."
-              </p>
-              <div style={{ marginTop: '12px' }}>
-                <strong style={{ color: '#1e3a8a' }}>Ana Gómez</strong>
-                <p className="small-note" style={{ margin: 0 }}>Cliente desde 2024</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Testimonials />
 
         <section className="section muted" id="faq">
           <div className="section-heading">
@@ -238,16 +187,20 @@ export default function HomePage() {
           </div>
           <div className="accordion">
             <details>
+              <summary>¿Puedo solicitar si tengo reportes en centrales?</summary>
+              <p>Si. Puedes iniciar la solicitud; la evaluacion se realiza manualmente por el equipo administrativo.</p>
+            </details>
+            <details>
               <summary>¿Debo verificar mi correo?</summary>
-              <p>No. El registro se puede completar sin verificacion obligatoria.</p>
+              <p>No. Despues del registro puedes completar perfil y solicitar credito.</p>
             </details>
             <details>
-              <summary>¿Cuantos documentos necesito?</summary>
-              <p>Al menos un documento de identidad. Se pueden pedir mas en revision.</p>
+              <summary>¿Qué documentos son mínimos?</summary>
+              <p>Al menos un documento de identidad. El administrador puede pedir documentacion adicional.</p>
             </details>
             <details>
-              <summary>¿Cómo recibo notificaciones?</summary>
-              <p>Por correo cuando el estado de la solicitud cambia.</p>
+              <summary>¿Cómo se notifican los cambios?</summary>
+              <p>Los cambios de estado se notifican por correo electronico.</p>
             </details>
           </div>
         </section>
@@ -318,7 +271,7 @@ export default function HomePage() {
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/profile.php?id=61568027056603" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: center, gap: '8px' }}>
+                <a href="https://www.facebook.com/profile.php?id=61568027056603" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   Facebook
                 </a>
               </li>
@@ -344,56 +297,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <form className="panel-form">
-            <label>
-              <span>Nombre</span>
-              <input required name="name" />
-            </label>
-
-            <label>
-              <span>Correo</span>
-              <input required type="email" name="email" />
-            </label>
-
-            <label>
-              <span>Mensaje</span>
-              <textarea required name="message"></textarea>
-            </label>
-
-            <button className="primary-button" type="submit">
-              Enviar
-            </button>
-          </form>
+          <ContactForm />
         </section>
 
         <section className="legal section" id="legal">
           <h2>Politica de privacidad y terminos</h2>
           <p>Loan Express protege la informacion personal y documental del cliente. Los datos se utilizan para crear la cuenta, completar el perfil, evaluar solicitudes de credito, gestionar documentos, comunicar cambios de estado y cumplir obligaciones legales aplicables.</p>
           <p>El envio de una solicitud no implica aprobacion automatica. La aprobacion, rechazo o solicitud de documentacion adicional depende de la revision administrativa y de la informacion presentada por el cliente.</p>
-          <p>Para más información, consulta nuestra <Link href="/privacidad">Política de Privacidad</Link> y <Link href="/terminos">Términos y Condiciones</Link>.</p>
+          <p>Para más información, consulta nuestra <Link href="/privacidad.html">Política de Privacidad</Link> y <Link href="/terminos.html">Términos y Condiciones</Link>.</p>
         </section>
       </main>
-
-      <footer className="footer">
-        <span>&copy; 2026 Loan Express. Todos los derechos reservados.</span>
-        <nav>
-          <Link href="/privacidad">Privacidad</Link>
-          <Link href="/terminos">Términos</Link>
-          <Link href="#contacto">Contacto</Link>
-          <a href="https://wa.me/15014699742" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            WhatsApp
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61568027056603" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-            Facebook
-          </a>
-        </nav>
-      </footer>
     </>
   );
 }

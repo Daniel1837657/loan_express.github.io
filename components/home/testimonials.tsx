@@ -1,38 +1,39 @@
-"use client";
-
-import React from "react";
-import { useLanguage } from "@/components/providers/language-provider";
-
-const data = [
-  {
-    author: "Maria G.",
-    en: "Loan Express helped me solve my financial problems quickly and easily. Highly recommended!",
-    es: "Los préstamos de Loan Express me ayudaron a resolver mis problemas financieros de manera rápida y sencilla. ¡Altamente recomendado!"
-  },
-  {
-    author: "Juan M.",
-    en: "Excellent customer service and competitive rates. The best option for personal loans.",
-    es: "Excelente servicio de atención al cliente y tasas de interés competitivas. Sin duda, la mejor opción para préstamos personales."
-  },
-  {
-    author: "Luisa R.",
-    en: "I got the money I needed for a medical emergency. Fast and reliable.",
-    es: "Gracias a Loan Express, pude obtener el dinero que necesitaba para mi emergencia médica. ¡Confiables y eficientes!"
-  }
-];
-
 export default function Testimonials() {
-  const { lang } = useLanguage();
+  const testimonials = [
+    {
+      quote: "El proceso fue increíblemente rápido. En 24 horas ya tenía el dinero en mi cuenta. ¡Totalmente recomendado!",
+      author: "María Rodríguez",
+      since: "Cliente desde 2024"
+    },
+    {
+      quote: "La transparencia en las tasas y plazos me dio mucha confianza. Sin sorpresas, todo claro desde el principio.",
+      author: "Carlos Pérez",
+      since: "Cliente desde 2023"
+    },
+    {
+      quote: "Pude consolidar mis deudas con una sola solicitud. El equipo de soporte siempre estuvo disponible para ayudarme.",
+      author: "Ana Gómez",
+      since: "Cliente desde 2024"
+    }
+  ];
 
   return (
-    <section className="section" id="testimonials">
-      <h2 style={{ textAlign: "center" }}>{lang === "en" ? "What our customers say" : "Lo que dicen nuestros clientes"}</h2>
-      <div className="testimonials-grid">
-        {data.map((t) => (
-          <article key={t.author} className="product-card">
-            <p>{lang === "en" ? t.en : t.es}</p>
-            <div className="muted" style={{ marginTop: 24 }}>{t.author}</div>
-          </article>
+    <section className="section" id="testimonios">
+      <div className="section-heading">
+        <p className="eyebrow">Lo que dicen nuestros clientes</p>
+        <h2>Experiencias de nuestros clientes</h2>
+      </div>
+      <div className="product-grid">
+        {testimonials.map((testimonial, index) => (
+          <div className="product-card" key={index}>
+            <p style={{ fontStyle: 'italic', color: '#334155', lineHeight: 1.6 }}>
+              "{testimonial.quote}"
+            </p>
+            <div style={{ marginTop: '12px' }}>
+              <strong style={{ color: '#1e3a8a' }}>{testimonial.author}</strong>
+              <p className="small-note" style={{ margin: 0 }}>{testimonial.since}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>
