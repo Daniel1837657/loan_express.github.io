@@ -62,7 +62,7 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "FinancialService",
             "name": "Loan Express",
-            "url": "https://loaneforxpress.com",
+            "url": "https://loaneforxpress.com/",
             "areaServed": "US",
             "description": "Servicios de credito personal y libre inversion con solicitud digital.",
             "sameAs": []
@@ -75,7 +75,7 @@ export default function HomePage() {
           className="hero" 
           id="inicio"
           style={{
-            backgroundImage: 'linear-gradient(115deg, rgba(30, 58, 138, 0.88), rgba(37, 99, 235, 0.70)), url("/banner.png")',
+            backgroundImage: 'linear-gradient(115deg, rgba(30, 58, 138, 0.88), rgba(37, 99, 235, 0.70)), url("banner.png")',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
