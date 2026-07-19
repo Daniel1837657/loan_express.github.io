@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://daniel1837657.github.io/loan_express.github.io/sitemap.xml
+Sitemap: https://loaneforxpress.com/sitemap.xml
