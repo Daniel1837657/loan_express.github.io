@@ -1,226 +1,399 @@
-"use client";
-
 import Link from "next/link";
-import { useLanguage } from "@/components/providers/language-provider";
 import Testimonials from "@/components/home/testimonials";
 
 const products = [
   {
     id: "personal",
-    name: { en: "Personal Loan", es: "Crédito Personal" },
-    description: {
-      en: "For personal needs with fixed terms and a digital process.",
-      es: "Para necesidades personales con plazo fijo y proceso digital."
-    },
+    name: "Crédito Personal",
+    description: "Para necesidades personales con plazo fijo y proceso digital.",
     min: 3000,
     max: 50000
   },
   {
     id: "libre",
-    name: { en: "Free Investment", es: "Libre Inversión" },
-    description: {
-      en: "For projects, consolidation or investment with flexible terms.",
-      es: "Para proyectos, consolidacion o inversion con plazos flexibles."
-    },
+    name: "Libre Inversión",
+    description: "Para proyectos, consolidacion o inversion con plazos flexibles.",
     min: 60000,
     max: 200000
   }
 ];
 
+export const metadata = {
+  title: "Loan Express | Crédito Digital Rápido y Transparente",
+  description: "Solicita crédito personal o de libre inversión en Loan Express. Proceso digital, tasas fijas y aprobación rápida. Montos desde $3,000 hasta $200,000 USD.",
+  keywords: "crédito, préstamo, crédito personal, libre inversión, financiamiento, préstamo digital",
+  authors: [{ name: "Loan Express" }],
+  creator: "Loan Express",
+  publisher: "Loan Express",
+  metadataBase: new URL("https://loaneforxpress.com/"),
+  openGraph: {
+    title: "Loan Express | Crédito Digital Rápido y Transparente",
+    description: "Solicita crédito personal o de libre inversión con proceso digital, tasas fijas y aprobación rápida.",
+    type: "website",
+    locale: "es_ES",
+    siteName: "Loan Express",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Loan Express | Crédito Digital Rápido y Transparente",
+    description: "Solicita crédito personal o de libre inversión con proceso digital, tasas fijas y aprobación rápida.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
 export default function HomePage() {
-  const { lang } = useLanguage();
-
   return (
-    <main>
-      <section className="section hero" id="hero">
-        <div className="hero-copy">
-          <p className="eyebrow">{lang === "en" ? "Serious, transparent digital credit" : "Credito digital serio y transparente"}</p>
-          <h1>Loan Express</h1>
-          <p>{lang === "en" ? "Apply for a personal or business loan, attach documents and track status in one place." : "Solicita credito personal o de libre inversion, adjunta documentos y consulta el estado desde un solo lugar."}</p>
-          <div className="hero-actions">
-            <Link href="/registro" className="primary-button">{lang === "en" ? "Apply for a loan" : "Solicitar credito"}</Link>
-            <a href="#requisitos" className="text-link">{lang === "en" ? "View requirements" : "Ver requisitos"}</a>
-          </div>
-        </div>
-        <div className="hero-stats">
-          <div>
-            <span className="metric">$3k - $200k</span>
-            <span>{lang === "en" ? "Amount range" : "Rango de montos"}</span>
-          </div>
-          <div>
-            <span className="metric">1.3%</span>
-            <span>{lang === "en" ? "Fixed rate" : "Tasa fija"}</span>
-          </div>
-          <div>
-            <span className="metric">12 - 60</span>
-            <span>{lang === "en" ? "Months term" : "Meses de plazo"}</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="servicios">
-        <div className="section-heading">
-          <p className="eyebrow">{lang === "en" ? "Financial products" : "Productos financieros"}</p>
-          <h2>{lang === "en" ? "Two clear options for your needs" : "Dos opciones claras para tu necesidad"}</h2>
-        </div>
-        <div className="product-grid">
-          {products.map((product) => (
-            <article className="product-card" key={product.id}>
-              <h3>{product.name[lang]}</h3>
-              <p>{product.description[lang]}</p>
-              <ul>
-                <li>{lang === "en" ? "Amounts" : "Montos"}: ${product.min.toLocaleString()} - ${product.max.toLocaleString()}</li>
-                <li>{lang === "en" ? "Terms" : "Plazos"}: 12, 24, 36, 48, 60 {lang === "en" ? "months" : "meses"}</li>
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section muted" id="requisitos">
-        <div className="section-heading">
-          <p className="eyebrow">{lang === "en" ? "Before you apply" : "Antes de solicitar"}</p>
-          <h2>{lang === "en" ? "Requirements to apply" : "Requisitos para solicitar"}</h2>
-        </div>
-        <div className="requirements-grid">
-          <article>
-            <strong>{lang === "en" ? "Accepted documents" : "Documentos aceptados"}</strong>
-            <p>{lang === "en" ? "ID, passport, work permit, consular card or other valid documents." : "Identidad, pasaporte, permiso de trabajo, matricula consular u otros habilitados."}</p>
-          </article>
-          <article>
-            <strong>{lang === "en" ? "Files" : "Archivos"}</strong>
-            <p>{lang === "en" ? "PDF or image, maximum 10 MB per file." : "PDF o imagen, maximo 10 MB por archivo."}</p>
-          </article>
-          <article>
-            <strong>{lang === "en" ? "Conditions" : "Condiciones"}</strong>
-            <p>{lang === "en" ? "Valid amount and term according to product, with at least one ID document." : "Monto y plazo validos según producto, con al menos un documento de identidad."}</p>
-          </article>
-        </div>
-      </section>
-
-      <Testimonials />
-
-      <section className="section" id="faq">
-        <div className="section-heading">
-          <p className="eyebrow">FAQ</p>
-          <h2>{lang === "en" ? "Frequently Asked" : "Preguntas frecuentes"}</h2>
-        </div>
-        <div className="faq-grid">
-          <details>
-            <summary>{lang === "en" ? "Do I need to verify my email?" : "¿Debo verificar mi correo?"}</summary>
-            <p>{lang === "en" ? "No. Registration can be completed without required verification." : "No. El registro se puede completar sin verificacion obligatoria."}</p>
-          </details>
-          <details>
-            <summary>{lang === "en" ? "How many documents do I need?" : "¿Cuantos documentos necesito?"}</summary>
-            <p>{lang === "en" ? "At least one ID document. More may be requested during review." : "Al menos un documento de identidad. Se pueden pedir mas en revision."}</p>
-          </details>
-          <details>
-            <summary>{lang === "en" ? "How do I receive notifications?" : "¿Cómo recibo notificaciones?"}</summary>
-            <p>{lang === "en" ? "By email when your application status changes." : "Por correo cuando el estado de la solicitud cambia."}</p>
-          </details>
-        </div>
-      </section>
-
-      <section
-        className="section"
-        style={{
-          background: "linear-gradient(135deg, #1e3a8a, #2563eb)",
-          color: "white",
-          textAlign: "center",
-          padding: "60px 20px"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FinancialService",
+            "name": "Loan Express",
+            "url": "https://loaneforxpress.com/",
+            "areaServed": "US",
+            "description": "Servicios de credito personal y libre inversion con solicitud digital.",
+            "sameAs": []
+          })
         }}
-      >
-        <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-          <h2 style={{ color: "white", fontSize: "36px", marginBottom: "16px" }}>
-            {lang === "en" ? "Ready for your loan?" : "¿Listo para tu crédito?"}
-          </h2>
-          <p style={{ color: "#dbeafe", fontSize: "18px", lineHeight: 1.6 }}>
-            {lang === "en"
-              ? "Join hundreds of clients who already trust Loan Express. A 100% digital, fast and transparent process."
-              : "Únete a cientos de clientes que ya confían en Loan Express. Proceso 100% digital, rápido y transparente."}
-          </p>
-          <div
-            style={{
-              marginTop: "28px",
-              display: "flex",
-              gap: "16px",
-              justifyContent: "center",
-              flexWrap: "wrap"
-            }}
-          >
-            <Link
-              href="/registro"
-              className="primary-button large"
-              style={{ background: "white", color: "#1e3a8a", border: "none" }}
-            >
-              🚀 {lang === "en" ? "Get started" : "Comenzar ahora"}
-            </Link>
-            <Link
-              href="/login"
-              className="secondary-button large"
-              style={{ background: "transparent", color: "white", borderColor: "white" }}
-            >
-              {lang === "en" ? "Sign in" : "Iniciar sesión"}
-            </Link>
-          </div>
-        </div>
-      </section>
+      />
+      
+      <header className="site-header">
+        <Link href="/" className="brand">
+          <img src="/logo.png" alt="Loan Express" className="brand-logo" width="84" height="64" fetchPriority="high" />
+        </Link>
+        <nav className="nav" id="mainNav">
+          <Link href="#nosotros">Nosotros</Link>
+          <Link href="#servicios">Servicios</Link>
+          <Link href="#requisitos">Requisitos</Link>
+          <Link href="#testimonios">Testimonios</Link>
+          <Link href="#faq">FAQ</Link>
+          <Link href="#contacto">Contacto</Link>
+          <button className="ghost-button" type="button">EN</button>
+          <Link href="/login" className="secondary-button">Ingresar</Link>
+          <Link href="/registro" className="primary-button">Registrarse</Link>
+        </nav>
+        <button className="menu-toggle" type="button" aria-label="Menú">☰</button>
+      </header>
 
-      <section className="section" id="contacto">
-        <div className="section-heading">
-          <p className="eyebrow">{lang === "en" ? "Contact" : "Contacto"}</p>
-          <h2>{lang === "en" ? "Contact us" : "Contáctanos"}</h2>
-        </div>
-        <div className="product-grid">
-          <article className="product-card">
-            <h3>
-              <span className="material-symbols-outlined">mail</span>{" "}
-              {lang === "en" ? "Email" : "Correo electrónico"}
-            </h3>
-            <p>
-              {lang === "en"
-                ? "Send us an email for any inquiry."
-                : "Envíanos un correo electrónico para cualquier consulta."}
+      <main>
+        <section 
+          className="hero" 
+          id="inicio"
+          style={{
+            backgroundImage: 'linear-gradient(115deg, rgba(30, 58, 138, 0.88), rgba(37, 99, 235, 0.70)), url("/banner.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        >
+          <div className="hero-content">
+            <p className="eyebrow">Crédito digital serio y transparente</p>
+            <h1>Loan Express</h1>
+            <p style={{ fontSize: '19px', maxWidth: '680px' }}>
+              Solicita crédito personal o de libre inversión, adjunta documentos y consulta el estado desde un solo lugar.
             </p>
-            <a href="mailto:contacto@loanexpress.com" className="secondary-button">
-              {lang === "en" ? "Write email" : "Escribir correo"}
-            </a>
-          </article>
-          <article className="product-card">
-            <h3>
-              <span className="material-symbols-outlined">phone</span>{" "}
-              {lang === "en" ? "Phone" : "Teléfono"}
-            </h3>
-            <p>
-              {lang === "en"
-                ? "Call us Monday to Friday, 8:00 a.m. - 6:00 p.m."
-                : "Llámanos de lunes a viernes, 8:00 a.m. - 6:00 p.m."}
+            <div className="hero-actions">
+              <Link href="/registro" className="primary-button large">Solicitar crédito</Link>
+              <Link href="#requisitos" className="text-link">Ver requisitos</Link>
+            </div>
+          </div>
+          <div className="hero-panel" aria-label="Resumen Loan Express">
+            <div>
+              <span>Rango de montos</span>
+              <span className="metric">$3k - $200k USD</span>
+            </div>
+            <div>
+              <span>Tasa fija</span>
+              <span className="metric">1.3%</span>
+            </div>
+            <div>
+              <span>Meses de plazo</span>
+              <span className="metric">12 - 60</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="servicios">
+          <div className="section-heading">
+            <p className="eyebrow">Productos financieros</p>
+            <h2>Dos opciones claras para tu necesidad</h2>
+          </div>
+          <div className="product-grid">
+            {products.map((product) => (
+              <article className="product-card" key={product.id}>
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <ul>
+                  <li>Montos: ${product.min.toLocaleString()} - ${product.max.toLocaleString()}</li>
+                  <li>Plazos: 12, 24, 36, 48, 60 meses</li>
+                </ul>
+                <Link href="/registro" className="primary-button">Solicitar</Link>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section split" id="nosotros">
+          <div>
+            <p className="eyebrow">Institucional</p>
+            <h2>Profesionalismo para decisiones financieras importantes</h2>
+            <p>Loan Express acompana a personas que necesitan credito en linea con un proceso claro, documentado y orientado a la confianza.</p>
+          </div>
+          <div className="stack">
+            <article className="info-block">
+              <h3>Historia</h3>
+              <p>Loan Express nace para facilitar el acceso a soluciones de credito a clientes que necesitan una evaluacion seria, especialmente migrantes, colombianos en el exterior y personas que requieren una alternativa financiera formal.</p>
+            </article>
+            <article className="info-block">
+              <h3>Mision</h3>
+              <p>Facilitar acceso a credito mediante procesos digitales, claros y responsables.</p>
+            </article>
+            <article className="info-block">
+              <h3>Vision</h3>
+              <p>Ser una entidad reconocida por confianza, rapidez y acompanamiento serio a sus clientes.</p>
+            </article>
+            <article className="info-block">
+              <h3>Valores</h3>
+              <p>Transparencia, seguridad, cumplimiento y respeto por la informacion del cliente.</p>
+            </article>
+            <article className="info-block">
+              <h3>Compromiso</h3>
+              <p>Cada solicitud se revisa con criterios definidos, proteccion de datos y comunicacion por correo durante el proceso.</p>
+            </article>
+          </div>
+        </section>
+
+        <section className="section muted" id="requisitos">
+          <div className="section-heading">
+            <p className="eyebrow">Antes de solicitar</p>
+            <h2>Requisitos para solicitar</h2>
+          </div>
+          <div className="requirements-grid">
+            <div className="requirement">
+              <strong>Documentos aceptados</strong>
+              <p>Identidad, pasaporte, permiso de trabajo, matricula consular, Social Security u otros habilitados.</p>
+            </div>
+            <div className="requirement">
+              <strong>Archivos</strong>
+              <p>PDF o imagen, maximo 10 MB por archivo.</p>
+            </div>
+            <div className="requirement">
+              <strong>Condiciones</strong>
+              <p>Monto dentro del producto elegido, plazo de 12, 24, 36, 48 o 60 meses y al menos un documento de identidad.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="testimonios">
+          <div className="section-heading">
+            <p className="eyebrow">Lo que dicen nuestros clientes</p>
+            <h2>Experiencias de nuestros clientes</h2>
+          </div>
+          <div className="product-grid">
+            <div className="product-card">
+              <p style={{ fontStyle: 'italic', color: '#334155', lineHeight: 1.6 }}>
+                "El proceso fue increíblemente rápido. En 24 horas ya tenía el dinero en mi cuenta. ¡Totalmente recomendado!"
+              </p>
+              <div style={{ marginTop: '12px' }}>
+                <strong style={{ color: '#1e3a8a' }}>María Rodríguez</strong>
+                <p className="small-note" style={{ margin: 0 }}>Cliente desde 2024</p>
+              </div>
+            </div>
+            <div className="product-card">
+              <p style={{ fontStyle: 'italic', color: '#334155', lineHeight: 1.6 }}>
+                "La transparencia en las tasas y plazos me dio mucha confianza. Sin sorpresas, todo claro desde el principio."
+              </p>
+              <div style={{ marginTop: '12px' }}>
+                <strong style={{ color: '#1e3a8a' }}>Carlos Pérez</strong>
+                <p className="small-note" style={{ margin: 0 }}>Cliente desde 2023</p>
+              </div>
+            </div>
+            <div className="product-card">
+              <p style={{ fontStyle: 'italic', color: '#334155', lineHeight: 1.6 }}>
+                "Pude consolidar mis deudas con una sola solicitud. El equipo de soporte siempre estuvo disponible para ayudarme."
+              </p>
+              <div style={{ marginTop: '12px' }}>
+                <strong style={{ color: '#1e3a8a' }}>Ana Gómez</strong>
+                <p className="small-note" style={{ margin: 0 }}>Cliente desde 2024</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section muted" id="faq">
+          <div className="section-heading">
+            <p className="eyebrow">FAQ</p>
+            <h2>Preguntas frecuentes</h2>
+          </div>
+          <div className="accordion">
+            <details>
+              <summary>¿Debo verificar mi correo?</summary>
+              <p>No. El registro se puede completar sin verificacion obligatoria.</p>
+            </details>
+            <details>
+              <summary>¿Cuantos documentos necesito?</summary>
+              <p>Al menos un documento de identidad. Se pueden pedir mas en revision.</p>
+            </details>
+            <details>
+              <summary>¿Cómo recibo notificaciones?</summary>
+              <p>Por correo cuando el estado de la solicitud cambia.</p>
+            </details>
+          </div>
+        </section>
+
+        <section
+          className="section"
+          style={{
+            background: "linear-gradient(135deg, #1e3a8a, #2563eb)",
+            color: "white",
+            textAlign: "center",
+            padding: "60px 20px"
+          }}
+        >
+          <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+            <h2 style={{ color: "white", fontSize: "36px", marginBottom: "16px" }}>
+              ¿Listo para tu crédito?
+            </h2>
+            <p style={{ color: "#dbeafe", fontSize: "18px", lineHeight: 1.6 }}>
+              Únete a cientos de clientes que ya confían en Loan Express.
+              Proceso 100% digital, rápido y transparente.
             </p>
-            <a href="tel:+15550102026" className="secondary-button">
-              {lang === "en" ? "Call" : "Llamar"}
-            </a>
-          </article>
-          <article className="product-card">
-            <h3>
-              <span className="material-symbols-outlined">location_on</span>{" "}
-              {lang === "en" ? "Location" : "Ubicación"}
-            </h3>
-            <p>
-              {lang === "en"
-                ? "Visit us at our main office."
-                : "Visítanos en nuestra oficina principal."}
-            </p>
-            <a 
-              href="https://maps.google.com/?q=1111+Brickell+Ave+Suite+2850+Miami+FL+33131"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="secondary-button"
+            <div
+              style={{
+                marginTop: "28px",
+                display: "flex",
+                gap: "16px",
+                justifyContent: "center",
+                flexWrap: "wrap"
+              }}
             >
-              {lang === "en" ? "View on map" : "Ver en mapa"}
-            </a>
-          </article>
-        </div>
-      </section>
-    </main>
+              <Link
+                href="/registro"
+                className="primary-button large"
+                style={{ background: "white", color: "#1e3a8a", border: "none" }}
+              >
+                🚀 Comenzar ahora
+              </Link>
+              <Link
+                href="/login"
+                className="secondary-button large"
+                style={{ background: "transparent", color: "white", borderColor: "white" }}
+              >
+                Iniciar sesión
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="section split" id="contacto">
+          <div>
+            <p className="eyebrow">Contacto</p>
+            <h2>Habla con Loan Express</h2>
+            <p>Envíanos tus datos y un asesor revisará tu mensaje.</p>
+            <ul className="contact-list">
+              <li>
+                <a href="mailto:contact@loaneforxpress.com">
+                  contact@loaneforxpress.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+5014699742">
+                  (501) 469-9742
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/15014699742" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61568027056603" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: center, gap: '8px' }}>
+                  Facebook
+                </a>
+              </li>
+              <li>
+                Lunes a viernes, 8:00 a.m. - 6:00 p.m.
+              </li>
+              <li>
+                <a href="https://maps.google.com/?q=1111+Brickell+Ave+Suite+2850+Miami+FL+33131" target="_blank" rel="noopener noreferrer">
+                  1111 Brickell Ave, Suite 2850, Miami FL 33131
+                </a>
+              </li>
+            </ul>
+            <div className="contact-map">
+              <iframe 
+                src="https://www.google.com/maps?q=1111+Brickell+Ave+Suite+2850+Miami+FL+33131&output=embed"
+                width="100%" 
+                height="250" 
+                style={{ border: 0 }} 
+                loading="lazy" 
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+
+          <form className="panel-form">
+            <label>
+              <span>Nombre</span>
+              <input required name="name" />
+            </label>
+
+            <label>
+              <span>Correo</span>
+              <input required type="email" name="email" />
+            </label>
+
+            <label>
+              <span>Mensaje</span>
+              <textarea required name="message"></textarea>
+            </label>
+
+            <button className="primary-button" type="submit">
+              Enviar
+            </button>
+          </form>
+        </section>
+
+        <section className="legal section" id="legal">
+          <h2>Politica de privacidad y terminos</h2>
+          <p>Loan Express protege la informacion personal y documental del cliente. Los datos se utilizan para crear la cuenta, completar el perfil, evaluar solicitudes de credito, gestionar documentos, comunicar cambios de estado y cumplir obligaciones legales aplicables.</p>
+          <p>El envio de una solicitud no implica aprobacion automatica. La aprobacion, rechazo o solicitud de documentacion adicional depende de la revision administrativa y de la informacion presentada por el cliente.</p>
+          <p>Para más información, consulta nuestra <Link href="/privacidad">Política de Privacidad</Link> y <Link href="/terminos">Términos y Condiciones</Link>.</p>
+        </section>
+      </main>
+
+      <footer className="footer">
+        <span>&copy; 2026 Loan Express. Todos los derechos reservados.</span>
+        <nav>
+          <Link href="/privacidad">Privacidad</Link>
+          <Link href="/terminos">Términos</Link>
+          <Link href="#contacto">Contacto</Link>
+          <a href="https://wa.me/15014699742" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61568027056603" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+        </nav>
+      </footer>
+    </>
   );
 }
