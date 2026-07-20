@@ -1,9 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import Testimonials from "@/components/home/testimonials";
 import ContactForm from "@/components/home/contact-form";
+import HeroButton from "@/components/home/hero-button";
 
 const products = [
   {
@@ -88,7 +86,7 @@ export default function HomePage() {
               Solicita crédito personal o de libre inversión, adjunta documentos y consulta el estado desde un solo lugar.
             </p>
             <div className="hero-actions">
-              <button className="primary-button large" data-view="register" type="button" data-i18n="start_request" onClick={() => router.push('/registro')}>Solicitar crédito</button>
+              <HeroButton />
               <a href="#requisitos" className="text-link" data-i18n="see_requirements">Ver requisitos</a>
             </div>
           </div>
