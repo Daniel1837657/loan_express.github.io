@@ -75,7 +75,7 @@ export default function HomePage() {
           className="hero" 
           id="inicio"
           style={{
-            backgroundImage: 'linear-gradient(115deg, rgba(30, 58, 138, 0.88), rgba(37, 99, 235, 0.70)), url("banner.png")',
+            backgroundImage: "linear-gradient(115deg, rgba(30, 58, 138, 0.88), rgba(37, 99, 235, 0.70)), url('banner.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
@@ -109,8 +109,8 @@ export default function HomePage() {
 
         <section className="section" id="servicios">
           <div className="section-heading">
-            <p className="eyebrow">Productos financieros</p>
-            <h2>Dos opciones claras para tu necesidad</h2>
+            <p className="eyebrow" data-i18n="services_eyebrow">Productos financieros</p>
+            <h2 data-i18n="services_title">Dos opciones claras para tu necesidad</h2>
           </div>
           <div className="product-grid">
             {products.map((product) => (
@@ -159,21 +159,21 @@ export default function HomePage() {
 
         <section className="section muted" id="requisitos">
           <div className="section-heading">
-            <p className="eyebrow">Antes de solicitar</p>
-            <h2>Requisitos para solicitar</h2>
+            <p className="eyebrow" data-i18n="requirements_eyebrow">Antes de solicitar</p>
+            <h2 data-i18n="requirements_title">Requisitos para solicitar</h2>
           </div>
           <div className="requirements-grid">
             <div className="requirement">
-              <strong>Documentos aceptados</strong>
-              <p>Identidad, pasaporte, permiso de trabajo, matricula consular, Social Security u otros habilitados.</p>
+              <strong><span className="material-symbols-outlined">description</span> <span data-i18n="req_docs">Documentos aceptados</span></strong>
+              <p data-i18n="req_docs_copy">Identidad, pasaporte, permiso de trabajo, matricula consular, Social Security u otros habilitados.</p>
             </div>
             <div className="requirement">
-              <strong>Archivos</strong>
-              <p>PDF o imagen, maximo 10 MB por archivo.</p>
+              <strong><span className="material-symbols-outlined">attach_file</span> <span data-i18n="req_files">Archivos</span></strong>
+              <p data-i18n="req_files_copy">PDF o imagen, maximo 10 MB por archivo.</p>
             </div>
             <div className="requirement">
-              <strong>Condiciones</strong>
-              <p>Monto dentro del producto elegido, plazo de 12, 24, 36, 48 o 60 meses y al menos un documento de identidad.</p>
+              <strong><span className="material-symbols-outlined">check_circle</span> <span data-i18n="req_terms">Condiciones</span></strong>
+              <p data-i18n="req_terms_copy">Monto dentro del producto elegido, plazo de 12, 24, 36, 48 o 60 meses y al menos un documento de identidad.</p>
             </div>
           </div>
         </section>
@@ -291,7 +291,7 @@ export default function HomePage() {
                 height="250" 
                 style={{ border: 0 }} 
                 loading="lazy" 
-                allowFullScreen
+                allowfullscreen
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>

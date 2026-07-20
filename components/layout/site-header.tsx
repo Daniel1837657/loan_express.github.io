@@ -13,7 +13,7 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <Link href="/" className="brand">
-        <img src="/logo.png" alt="Loan Express" className="brand-logo" width="84" height="64" fetchPriority="high" />
+        <img src="logo.png" alt="Loan Express" className="brand-logo" width="84" height="64" fetchPriority="high" />
       </Link>
 
       <nav className={`nav ${isMenuOpen ? 'open' : ''}`} id="mainNav">
