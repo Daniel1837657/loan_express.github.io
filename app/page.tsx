@@ -81,27 +81,27 @@ export default function HomePage() {
           }}
         >
           <div className="hero-content">
-            <p className="eyebrow">Crédito digital serio y transparente</p>
-            <h1>Loan Express</h1>
-            <p style={{ fontSize: '19px', maxWidth: '680px' }}>
+            <p className="eyebrow" data-i18n="hero_eyebrow">Crédito digital serio y transparente</p>
+            <h1 data-i18n="hero_title">Loan Express</h1>
+            <p style={{ fontSize: '19px', maxWidth: '680px' }} data-i18n="hero_copy">
               Solicita crédito personal o de libre inversión, adjunta documentos y consulta el estado desde un solo lugar.
             </p>
             <div className="hero-actions">
-              <Link href="/registro" className="primary-button large">Solicitar crédito</Link>
-              <Link href="#requisitos" className="text-link">Ver requisitos</Link>
+              <Link href="/registro" className="primary-button large" data-i18n="start_request">Solicitar crédito</Link>
+              <Link href="#requisitos" className="text-link" data-i18n="see_requirements">Ver requisitos</Link>
             </div>
           </div>
           <div className="hero-panel" aria-label="Resumen Loan Express">
             <div>
-              <span>Rango de montos</span>
+              <span data-i18n="amount_range">Rango de montos</span>
               <span className="metric">$3k - $200k USD</span>
             </div>
             <div>
-              <span>Tasa fija</span>
+              <span data-i18n="fixed_rate">Tasa fija</span>
               <span className="metric">1.3%</span>
             </div>
             <div>
-              <span>Meses de plazo</span>
+              <span data-i18n="terms_months">Meses de plazo</span>
               <span className="metric">12 - 60</span>
             </div>
           </div>
