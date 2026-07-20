@@ -49,17 +49,17 @@ export default function ContactForm() {
     <>
       <form className="panel-form" onSubmit={handleSubmit}>
         <label>
-          <span>Nombre</span>
+          <span data-i18n="name">Nombre</span>
           <input required name="name" disabled={isSubmitting} />
         </label>
 
         <label>
-          <span>Correo</span>
+          <span data-i18n="email">Correo</span>
           <input required type="email" name="email" disabled={isSubmitting} />
         </label>
 
         <label>
-          <span>Mensaje</span>
+          <span data-i18n="message">Mensaje</span>
           <textarea required name="message" disabled={isSubmitting}></textarea>
         </label>
 

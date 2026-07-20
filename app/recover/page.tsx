@@ -20,15 +20,15 @@ export default function RecoverPage() {
 
   return (
     <main className="section">
-      <h1>Recover password</h1>
+      <h1>Recuperar contraseña</h1>
       <form className="form-grid" onSubmit={handleSubmit}>
         <label>
-          Email
+          Correo electrónico
           <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" required />
         </label>
 
         <div>
-          <button className="primary-button" type="submit">Send recovery email</button>
+          <button className="primary-button" type="submit">Enviar correo de recuperación</button>
         </div>
       </form>
       {message ? <p className="message success">{message}</p> : null}
