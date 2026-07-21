@@ -3,8 +3,8 @@ import { Resend } from 'resend';
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
 
-const FROM_EMAIL = 'Loan Express <noreply@loanexpress.com>';
-const ADMIN_EMAIL = 'contact@loanexpress.com';
+const FROM_EMAIL = 'Loan Express <contact@loaneforxpress.com>';
+const ADMIN_EMAIL = 'contact@loaneforxpress.com';
 
 /**
  * Send welcome email to new user
