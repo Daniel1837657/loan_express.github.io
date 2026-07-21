@@ -77,16 +77,12 @@ export default function HomePage() {
         <section 
           className="hero" 
           id="inicio"
-          style={{
-            backgroundImage: "linear-gradient(115deg, rgba(30, 58, 138, 0.88), rgba(37, 99, 235, 0.70)), url('/banner.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
+          style="background-image: linear-gradient(115deg, rgba(30, 58, 138, 0.88), rgba(37, 99, 235, 0.70)), url('banner.png'); background-size: cover; background-position: center;"
         >
           <div className="hero-content">
             <p className="eyebrow" data-i18n="hero_eyebrow">Crédito digital serio y transparente</p>
             <h1 data-i18n="hero_title">Loan Express</h1>
-            <p style={{ fontSize: '19px', maxWidth: '680px' }} data-i18n="hero_copy">
+            <p style="font-size: 19px; max-width: 680px;" data-i18n="hero_copy">
               Solicita crédito personal o de libre inversión, adjunta documentos y consulta el estado desde un solo lugar.
             </p>
             <div className="hero-actions">
